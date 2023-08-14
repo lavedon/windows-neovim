@@ -1,5 +1,13 @@
 local lsp = require('lsp-zero')
 
+lsp.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»',
+})
+
+
 lsp.preset('recommended')
 
 lsp.ensure_installed({
