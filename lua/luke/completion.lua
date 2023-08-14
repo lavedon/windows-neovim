@@ -61,4 +61,12 @@ cmp.setup({
       ls.lsp_expand(args.body)
     end,
   },
+  window = {
+    documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered({
+        max_height = 40,
+        max_width = 80,
+        winhighlight = 'Normal:CmpPmenu,CursorLine:PmenuSel,Search:None'
+    }),
+}
 })
