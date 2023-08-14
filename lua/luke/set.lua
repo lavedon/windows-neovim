@@ -1,5 +1,7 @@
 vim.cmd[[colorscheme tokyonight-night]]
 
+vim.g.python3_host_prog = 'C:\\Users\\User\\.pyenv\\pyenv-win\\versions\\neovim3\\Scripts\\python.exe'
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
