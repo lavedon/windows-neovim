@@ -44,4 +44,5 @@ use {
   "folke/trouble.nvim",
   requires = { "nvim-tree/nvim-web-devicons" },
 }
-  end)
+use('github/copilot.vim')
+end)
