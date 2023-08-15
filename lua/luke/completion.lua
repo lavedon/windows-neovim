@@ -3,17 +3,10 @@ local ls = require("luasnip")
 ls.config.set_config({
   history = true,
   updateevents = "TextChanged,TextChangedI",
+  enable_autosnippets = true,
 })
+require("luasnip.loaders.from_lua").load({paths = "C:/Users/User/AppData/Local/nvim/lua/luke/snippets"})
 require'luasnip/loaders/from_vscode'.load() -- If you want to use friendly-snippets
-
-ls.snippets = {
-  typescript = {
-    ls.parser.parse_snippet(
-      "func",
-      "function ${1:functionName}(${2:params}): ${3:returnType} {\n\t${4:body}\n}"
-    ),
-  },
-}
 
 local function has_words_before()
   if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
