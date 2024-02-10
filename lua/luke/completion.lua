@@ -1,9 +1,16 @@
 local cmp = require('cmp')
-local ls = require("luasnip")
+local ls = require('luasnip')
 ls.config.set_config({
   history = true,
   updateevents = "TextChanged,TextChangedI",
   enable_autosnippets = true,
+  ext_opts = {
+   [require("luasnip.util.types").choiceNode] = {
+     active = {
+       virt_text = { { "*", "GruvboxOrange" } },
+    },
+    },
+    },
 })
 require("luasnip.loaders.from_lua").load({paths = "C:/Users/User/AppData/Local/nvim/lua/luke/snippets"})
 require'luasnip/loaders/from_vscode'.load() -- If you want to use friendly-snippets
@@ -63,3 +70,8 @@ cmp.setup({
     }),
 }
 })
+
+vim.cmd [[
+autocmd VimEnter * Copilot disable
+]]
+
