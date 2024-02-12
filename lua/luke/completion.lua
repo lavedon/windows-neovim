@@ -71,7 +71,26 @@ cmp.setup({
 }
 })
 
-vim.cmd [[
-autocmd VimEnter * Copilot disable
-]]
+local list_snips = function()
+    local ft_list = require("luasnip").available()[vim.o.filetype]
+    local ft_snips = {}
+    for _, item in pairs(ft_list) do
+        ft_snips[item.trigger] = item.name
+    end
+    -- Create a new buffer for displaying the snippets list
+    local buf = vim.api.nvim_create_buf(false, true)
+    -- Populate the buffer with the snippets list
+    local lines = {}
+    for trigger, name in pairs(ft_snips) do
+        table.insert(lines, trigger .. ": " .. name)
+    end
+    vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+    -- Open a new vertical split and display the buffer
+    vim.api.nvim_command('vsplit')
+    vim.api.nvim_win_set_buf(0, buf)
+end
+
+vim.api.nvim_create_user_command("SnipList", list_snips, {})
+
+vim.cmd [[autocmd VimEnter * Copilot disable]]
 
