@@ -12,9 +12,9 @@ ls.snippets = {
       " {",
       "\tpublic interface "}), i(2, "InterfaceName"), t({ "",
       "\t{",
-      "\t\t// Joe hates property setters in an interface"}),
+      "\t\t
       t({"",
-      "\t\t"}), c(3, {t("char"), t("int"), t("string")}), t(" "), i(4, "VideoEmbedHash"), t(";"),
+      "\t\t"}), c(3, {t("char"), t("int"), t("string")}), t(" "), i(4, "VideoEmbedHash"), t("{ get; set;"),
       t({"",
       "\t}",
       "}"
