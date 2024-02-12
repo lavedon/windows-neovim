@@ -62,5 +62,15 @@ ls.add_snippets("c", {
         t("safe_gets("),
         i(1,"inputFilename"),
         t(", FILENAME_MAX); // FILENAME_MAX is defined in stdio.h"),
-    })
+    }),
+   s("csv_parser_simple", 
+     t({
+    'char item[BUFSIZE]; // #define BUFSIZE 4096',
+    'char delim;',
+    '',
+    'while (scanf("%[^,\\n]%c", item, &delim) != EOF) {',
+    '\tprintf("item: %s\\n", item);',
+    '}',
+    '// requires #include <ctype.h>',
+    }))
 })
