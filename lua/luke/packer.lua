@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
   }
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
-  use('theprimeagen/harpoon')
   use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
@@ -45,4 +44,26 @@ use {
   requires = { "nvim-tree/nvim-web-devicons" },
 }
 use('github/copilot.vim')
+use({
+  "epwalsh/obsidian.nvim",
+  tag = "*",  -- recommended, use latest release instead of latest commit
+  requires = {
+    -- Required.
+    "nvim-lua/plenary.nvim",
+
+    -- see below for full list of optional dependencies 👇
+  },
+  config = function()
+    require("obsidian").setup({
+      workspaces = {
+        {
+          name = "personal",
+          path = "C:\\my-obsidian-vault",
+        }
+      },
+
+      -- see below for full list of options 👇
+    })
+  end,
+})
 end)
