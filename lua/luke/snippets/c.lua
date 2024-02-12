@@ -71,6 +71,5 @@ ls.add_snippets("c", {
     'while (scanf("%[^,\\n]%c", item, &delim) != EOF) {',
     '\tprintf("item: %s\\n", item);',
     '}',
-    '// requires #include <ctype.h>',
     }))
 })
