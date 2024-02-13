@@ -1,4 +1,7 @@
 local ls = require('luasnip')
+-- import the fmt function
+local fmt = require("luasnip.extras.fmt").fmt
+
 local s = ls.s
 local t = ls.t
 local i = ls.i
@@ -22,4 +25,4 @@ ls.add_snippets("sql", {
         Columns = i(3, "Columns"),
         Values = i(4, "Values")
        }))
-    });
+});
