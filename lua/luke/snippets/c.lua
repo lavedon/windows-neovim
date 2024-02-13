@@ -4,7 +4,7 @@ local s = ls.s
 local t = ls.t
 local i = ls.i
 
-print("Loading C snippets")
+print("Loading C snippets...")
 ls.add_snippets("c", {
     s("hello", {
         t("printf('Hello, World!');")
