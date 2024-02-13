@@ -1,18 +1,18 @@
 local ls = require('luasnip')
--- import the fmt function
 local fmt = require("luasnip.extras.fmt").fmt
 
 local s = ls.s
 local t = ls.t
 local i = ls.i
 
+print("loading sql snippets!")
 ls.add_snippets("sql", {
     s("setup", {
         t({"SET ANSI_NULLS ON", "GO", "SET QUOTED_IDENTIFIER ON", "GO", ""}),
     }),
     s("whichServer", fmt([[ 
           DECLARE @machinename VARCHAR(100);
-          SET @machinename = CONVERT(VARCHAR(100), SERVERPROPERTY({ServerName})); 
+          SET @machinename = CONVERT(VARCHAR(100), SERVERPROPERTY('machinename')); 
 
            IF (@machinename = '{ServerName}'),
            BEGIN
