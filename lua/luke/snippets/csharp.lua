@@ -15,11 +15,11 @@ ls.add_snippets("cs", {
         parameters.Add("@{Column3}, {variable3});
     ]], {
         Column1 = i(1, "column1"),
-        Variable1 = i(1, "variable1"),
-        Column2 = i(1, "column2"),
-        Variable2 = i(1, "variable1"),
-        Column3 = i(1, "column3"),
-        Variable2 = i(1, "variable1")
+        variable1 = i(2, "variable1"),
+        Column2 = i(3, "column2"),
+        variable2 = i(4, "variable2"),
+        Column3 = i(5, "column3"),
+        variable3 = i(6, "variable3")
     }), {description="Dapper - Create Dynamic parameters"})
 });
        
