@@ -11,3 +11,6 @@ notepad $PROFILE
 
 powershell
 $env:XDG_CONFIG_HOME="$env:USERPROFILE\my_nvim_config"
+
+If this is a new computer you will have to allow execution scripts.
+Set-ExecutionPolicy RemoteSigned
