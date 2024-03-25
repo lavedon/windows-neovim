@@ -21,16 +21,15 @@ ls.add_snippets("cs", { -- Make sure this matches your file type
         Column3 = i(5, "column3"),
         variable3 = i(6, "variable3")
     }), {description="Dapper - Create Dynamic parameters"}),
-    s("allObjectProperties", fmt([[
-foreach (var {1} in {2})
-{{
-   Console.WriteLine("New row...");
-   foreach (PropertyInfo prop in {1}.GetType().GetProperties())
-   {{
-       Console.WriteLine($"{prop.Name}: {prop.GetValue({1})}");
-   }}
-   Console.WriteLine(); // New line
-}}
+    s("propsAllReflection", fmt([[
+        foreach (var {1} in {2})
+        {{
+           foreach (PropertyInfo prop in {1}.GetType().GetProperties())
+           {{
+               Console.WriteLine($"{{prop.Name}}: {{prop.GetValue({1})}}");
+           }}
+           Console.WriteLine(); // New line
+        }}
     ]], {
         i(1, "obj"),
         i(2, "objs"),
