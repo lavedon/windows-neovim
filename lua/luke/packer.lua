@@ -40,12 +40,22 @@ return require('packer').startup(function(use)
 }
 use('eandrju/cellular-automaton.nvim')
 use('nvim-tree/nvim-web-devicons')
+use('folke/lsp-colors.nvim')
 use { "nvim-neotest/nvim-nio" }
+use('ryanoasis/vim-devicons')
 use('mfussenegger/nvim-dap')
+use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 use {
-  "folke/trouble.nvim",
-  requires = { "nvim-tree/nvim-web-devicons" },
+  "folke/lsp-trouble.nvim",
+  requires = "kyazdani42/nvim-web-devicons",
+  config = function()
+    require("trouble").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
 }
 use('github/copilot.vim')
 use {

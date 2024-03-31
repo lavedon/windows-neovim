@@ -4,7 +4,7 @@ vim.opt.tags="./tags,tags;$HOME"
 vim.g.python3_host_prog = 'C:\\Users\\Owner\\.pyenv\\pyenv-win\\versions\\neovim3\\Scripts\\python.exe'
 
 vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -13,7 +13,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
