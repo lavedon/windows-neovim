@@ -38,12 +38,30 @@ return require('packer').startup(function(use)
     {'rafamadriz/friendly-snippets'},
   }
 }
+use('eandrju/cellular-automaton.nvim')
 use('nvim-tree/nvim-web-devicons')
+use { "nvim-neotest/nvim-nio" }
+use('mfussenegger/nvim-dap')
+use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 use {
   "folke/trouble.nvim",
   requires = { "nvim-tree/nvim-web-devicons" },
 }
 use('github/copilot.vim')
+use {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    branch = 'canary',
+    requires = { 
+      'github/copilot.vim', 
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require("CopilotChat").setup({
+        debug = true, -- Enable debugging
+        -- Include other configuration settings here
+      })
+    end
+}
 use({
   "epwalsh/obsidian.nvim",
   tag = "*",  -- recommended, use latest release instead of latest commit

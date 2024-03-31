@@ -45,3 +45,20 @@ end)
 
 --  My CopyBufferPlugin
 vim.keymap.set('n', '<leader>cb', ':CopyBufferToClipboard<CR>', {noremap = true, silent = true})
+
+-- Dap 
+vim.api.nvim_set_keymap('n', '<Leader>c', "<Cmd>lua require'dap'.continue()<CR>", {silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>o', "<Cmd>lua require'dap'.step_over()<CR>", {silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>si', "<Cmd>lua require'dap'.step_into()<CR>", {silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>so', "<Cmd>lua require'dap'.step_out()<CR>", {silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>b', "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", {silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>B', "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", {silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>lp', "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", {silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>dr', "<Cmd>lua require'dap'.repl.open()<CR>", {silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>dl', "<Cmd>lua require'dap'.run_last()<CR>", {silent = true})
+
+-- Chat
+vim.api.nvim_set_keymap('n', '<Leader>ae', "<cmd>CopilotChatExplain<cr>", {silent = true})
+vim.api.nvim_set_keymap('v', '<Leader>ae', "<cmd>lua ExplainVisualSelection()<CR>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>ai', "<cmd>CopilotChatToggle<cr>", {silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>aic', "<cmd>CopilotChatToggle<cr>", {silent = true})
