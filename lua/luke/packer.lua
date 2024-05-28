@@ -44,6 +44,20 @@ use {
   requires = { "nvim-tree/nvim-web-devicons" },
 }
 use('github/copilot.vim')
+use {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    branch = 'canary',
+    requires = {
+      'github/copilot.vim',
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require("CopilotChat").setup({
+        debug = true, -- Enable debugging
+        -- Include other configuration settings here
+      })
+    end
+}
 use({
   "epwalsh/obsidian.nvim",
   tag = "*",  -- recommended, use latest release instead of latest commit
