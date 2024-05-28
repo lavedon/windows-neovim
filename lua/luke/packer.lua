@@ -80,4 +80,5 @@ use({
     })
   end,
 })
+use ('tpope/vim-fugitive')
 end)
