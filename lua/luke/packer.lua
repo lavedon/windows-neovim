@@ -57,8 +57,8 @@ use({
     require("obsidian").setup({
       workspaces = {
         {
-          name = "personal",
-          path = "C:\\my-obsidian-vault",
+          name = "work",
+          path = "C:\\Users\\Luke.Avedon\\ConiferCodingNotes"
         }
       },
 
