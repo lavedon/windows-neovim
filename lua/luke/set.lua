@@ -2,6 +2,7 @@ vim.cmd[[colorscheme tokyonight-night]]
 vim.opt.tags="./tags,tags;$HOME"
 
 vim.g.python3_host_prog = 'C:\\Python312\\python.exe'
+vim.g.netrw_liststyle = 3
 
 vim.opt.nu = true
 vim.opt.relativenumber = false
@@ -10,6 +11,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.conceallevel = 2
 
 vim.opt.smartindent = true
 
