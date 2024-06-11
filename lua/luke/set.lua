@@ -32,6 +32,10 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.laststatus = 3 
+vim.cmd([[highlight Normal guibg=none]])
+
+
 vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("\\<CR>")', {silent = true, script = true, expr = true})
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap('n', '<C-H>', ':Copilot panel<CR>', {noremap = true, silent = true})
