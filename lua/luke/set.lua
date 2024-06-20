@@ -2,6 +2,7 @@ vim.cmd[[colorscheme tokyonight-night]]
 vim.opt.tags="./tags,tags;$HOME"
 
 vim.g.python3_host_prog = 'C:\\Users\\User\\.pyenv\\pyenv-win\\versions\\neovim3\\Scripts\\python.exe'
+vim.g.netrw_liststyle = 3
 
 vim.opt.nu = true
 vim.opt.relativenumber = false
@@ -32,10 +33,6 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-vim.opt.laststatus = 3 
-vim.cmd([[highlight Normal guibg=none]])
-
-
 vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("\\<CR>")', {silent = true, script = true, expr = true})
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap('n', '<C-H>', ':Copilot panel<CR>', {noremap = true, silent = true})
@@ -60,3 +57,5 @@ if vim.fn.executable('ag') == 1 then
 end
 
 vim.o.shada = "!,'999,<50,s10,h"
+vim.opt.laststatus = 3 
+vim.cmd([[highlight WinSeparator guibg=none]])
