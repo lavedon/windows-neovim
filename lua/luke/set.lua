@@ -58,3 +58,5 @@ if vim.fn.executable('ag') == 1 then
   vim.o.grepprg = "ag --vimgrep $*"
   vim.o.grepformat = "%f:%l:%c:%m"
 end
+
+vim.opt.shada = "'1000,<50,s1000,h'"
