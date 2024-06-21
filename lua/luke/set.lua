@@ -49,6 +49,10 @@ end
 vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 
+vim.o.foldmethod = "indent"
+vim.o.foldlevel = 1
+vim.o.foldclose = "all"
+
 if vim.fn.executable('ag') == 1 then
   vim.o.grepprg = "ag --vimgrep $*"
   vim.o.grepformat = "%f:%l:%c:%m"
@@ -57,3 +61,4 @@ end
 -- https://www.youtube.com/watch?v=jH5PNvJIa6o
 vim.opt.laststatus = 3
 vim.cmd [[highlight WinSeparator guibg=None]]
+vim.opt.shada = "!,'999,f1,<50,s10,h"
