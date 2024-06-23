@@ -58,6 +58,16 @@ if vim.fn.executable('ag') == 1 then
   vim.o.grepformat = "%f:%l:%c:%m"
 end
 
+-- Use PowerShell
+if vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1 then
+  vim.g.terminal_ansi_colors = 0
+  vim.env.TERM = 'dumb'
+  vim.o.shell = '"C:\\Program Files\\PowerShell\\7\\pwsh.exe"'
+  vim.o.shellcmdflag = '-NoLogo -ExecutionPolicy Unrestricted -Command'
+  vim.o.shellquote = ''
+  vim.o.shellxquote = ''
+end
+
 -- https://www.youtube.com/watch?v=jH5PNvJIa6o
 vim.opt.laststatus = 3
 vim.cmd [[highlight WinSeparator guibg=None]]
