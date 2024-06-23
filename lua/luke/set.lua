@@ -60,12 +60,14 @@ end
 
 -- Use PowerShell
 if vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1 then
-  vim.g.terminal_ansi_colors = 0
-  vim.env.TERM = 'dumb'
-  vim.o.shell = '"C:\\Program Files\\PowerShell\\7\\pwsh.exe"'
-  vim.o.shellcmdflag = '-NoLogo -ExecutionPolicy Unrestricted -Command'
-  vim.o.shellquote = ''
-  vim.o.shellxquote = ''
+      vim.g.terminal_ansi_colors = 0
+      vim.env.TERM = 'dumb'
+      vim.o.shell = vim.fn.executable('pwsh') == 1 and 'pwsh' or 'powershell'
+      vim.o.shellcmdflag = '-NoLogo -ExecutionPolicy Unrestricted -Command'
+      vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+      vim.o.shellpipe  = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
+      vim.o.shellquote = ''
+      vim.o.shellxquote = ''
 end
 
 -- https://www.youtube.com/watch?v=jH5PNvJIa6o
