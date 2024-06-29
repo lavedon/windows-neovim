@@ -66,6 +66,6 @@ vim.api.nvim_set_keymap('n', '<Leader>aic', "<cmd>CopilotChatToggle<cr>", {silen
 -- Diagnostics 
 vim.api.nvim_set_keymap('n', '<Leader>xd', "<cmd>lua vim.diagnostic.setloclist(); vim.cmd('lopen')<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>xf', "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('[d', "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap(']d', "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '[d', "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ']d', "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
 
