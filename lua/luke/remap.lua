@@ -63,5 +63,9 @@ vim.api.nvim_set_keymap('v', '<Leader>ae', "<cmd>lua ExplainVisualSelection()<CR
 vim.api.nvim_set_keymap('n', '<Leader>ai', "<cmd>CopilotChatToggle<cr>", {silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>aic', "<cmd>CopilotChatToggle<cr>", {silent = true})
 
--- Trouble
-vim.api.nvim_set_keymap('n', '<Leader>xx', "<cmd>Trouble diagnostics toggle<cr>", {silent = true})
+-- Diagnostics 
+vim.api.nvim_set_keymap('n', '<Leader>xd', "<cmd>lua vim.diagnostic.setloclist(); vim.cmd('lopen')<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>xf', "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('[d', "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(']d', "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
+
