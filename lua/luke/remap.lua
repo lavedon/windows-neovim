@@ -47,13 +47,11 @@ vim.api.nvim_set_keymap('v', '<Leader>ae', "<cmd>lua ExplainVisualSelection()<CR
 vim.api.nvim_set_keymap('n', '<Leader>ai', "<cmd>CopilotChatToggle<cr>", {silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>aic', "<cmd>CopilotChatToggle<cr>", {silent = true})
 
---- Trouble
-vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
-vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
-vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
-vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
-vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
-vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
-
 --  My CopyBufferPlugin
 vim.keymap.set('n', '<leader>cb', ':CopyBufferToClipboard<CR>', {noremap = true, silent = true})
+
+-- Diagnostics 
+vim.api.nvim_set_keymap('n', '<Leader>xd', "<cmd>lua vim.diagnostic.setloclist(); vim.cmd('lopen')<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>xf', "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '[d', "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ']d', "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
