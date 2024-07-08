@@ -82,3 +82,8 @@ use({
 })
 use ('tpope/vim-fugitive')
 end)
+use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+}
