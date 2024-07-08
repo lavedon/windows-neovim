@@ -61,15 +61,18 @@ use {
       })
     end
 }
-use { 'otavioschwanck/arrow.nvim', config = function()
-  require('arrow').setup({
-    show_icons = true,
-    always_show_path = false,
-    leader_key = ';' -- Recommended to be a single key
-    buffer_leader_key = 'm', -- Per Buffer Mappings
-    global_bookmarks = true
-  })
-end }
+use { 
+    'otavioschwanck/arrow.nvim',
+    config = function()
+      require('arrow').setup({
+        show_icons = true,
+        always_show_path = false,
+        leader_key = ';', -- Recommended to be a single key
+        buffer_leader_key = 'm', -- Per Buffer Mappings
+        global_bookmarks = true
+      })
+    end
+}
 use({
   "epwalsh/obsidian.nvim",
   tag = "*",  -- recommended, use latest release instead of latest commit

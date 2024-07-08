@@ -85,6 +85,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\laved\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["arrow.nvim"] = {
+    config = { "\27LJ\2\n‹\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\5\21global_bookmarks\2\22buffer_leader_key\6m\15leader_key\6;\21always_show_path\1\15show_icons\2\nsetup\narrow\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\laved\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\arrow.nvim",
+    url = "https://github.com/otavioschwanck/arrow.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "C:\\Users\\laved\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
@@ -201,11 +207,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\laved\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["telescope-fzf-native.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\laved\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-fzf-native.nvim",
-    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "C:\\Users\\laved\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
@@ -229,14 +230,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: obsidian.nvim
-time([[Config for obsidian.nvim]], true)
-try_loadstring("\27LJ\2\n\1\0\0\5\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\2B\0\2\1K\0\1\0\15workspaces\1\0\1\15workspaces\0\1\0\2\tpath\25C:\\my-obsidian-vault\tname\rpersonal\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
-time([[Config for obsidian.nvim]], false)
+-- Config for: arrow.nvim
+time([[Config for arrow.nvim]], true)
+try_loadstring("\27LJ\2\n‹\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\5\21global_bookmarks\2\22buffer_leader_key\6m\15leader_key\6;\21always_show_path\1\15show_icons\2\nsetup\narrow\frequire\0", "config", "arrow.nvim")
+time([[Config for arrow.nvim]], false)
 -- Config for: CopilotChat.nvim
 time([[Config for CopilotChat.nvim]], true)
 try_loadstring("\27LJ\2\nG\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\ndebug\2\nsetup\16CopilotChat\frequire\0", "config", "CopilotChat.nvim")
 time([[Config for CopilotChat.nvim]], false)
+-- Config for: obsidian.nvim
+time([[Config for obsidian.nvim]], true)
+try_loadstring("\27LJ\2\n\1\0\0\5\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\2B\0\2\1K\0\1\0\15workspaces\1\0\1\15workspaces\0\1\0\2\tpath\25C:\\my-obsidian-vault\tname\rpersonal\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+time([[Config for obsidian.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
