@@ -45,6 +45,11 @@ use {
 }
 use('github/copilot.vim')
 use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+}
+use {
     'CopilotC-Nvim/CopilotChat.nvim',
     branch = 'canary',
     requires = {
@@ -82,8 +87,3 @@ use({
 })
 use ('tpope/vim-fugitive')
 end)
-use {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    requires = { {"nvim-lua/plenary.nvim"} }
-}
