@@ -74,3 +74,8 @@ end
 vim.opt.laststatus = 3
 vim.cmd [[highlight WinSeparator guibg=None]]
 vim.opt.shada = "!,'999,f1,<50,s10,h"
+
+-- cheat.sh 
+
+vim.api.nvim_set_keymap('n', '<leader>cc', "<cmd>lua require('utils.cht').open_cheatsheet()<CR>", { noremap = true, silent = true })
+vim.opt.scrollback = 100000
