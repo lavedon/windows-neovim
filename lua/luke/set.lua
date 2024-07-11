@@ -48,24 +48,6 @@ end
 vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 
-local harpoon = require("harpoon")
-
--- REQUIRED
-harpoon:setup()
--- REQUIRED
-
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
-vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
-vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
-
--- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<leader>i", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<leader>o", function() harpoon:list():next() end)
-
 vim.o.foldmethod = "indent"
 vim.o.foldlevel = 1
 vim.o.foldclose = "all"
@@ -74,6 +56,11 @@ if vim.fn.executable('ag') == 1 then
   vim.o.grepprg = "ag --vimgrep $*"
   vim.o.grepformat = "%f:%l:%c:%m"
 end
+
+--- cheat.sh
+vim.api.nvim_set_keymap('n', '<leader>cc', "<cmd>lua require('luke.cht').cht()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>so', "<cmd>lua require('luke.cht').so_input()<CR>", { noremap = true, silent = true })
+vim.opt.scrollback = 100000
 
 vim.o.shada = "!,'999,<50,s10,h"
 vim.opt.laststatus = 3 

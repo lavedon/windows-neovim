@@ -45,9 +45,16 @@ use {
 }
 use('github/copilot.vim')
 use {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    requires = { {"nvim-lua/plenary.nvim"} }
+    'otavioschwanck/arrow.nvim',
+    config = function()
+      require('arrow').setup({
+        show_icons = true,
+        always_show_path = false,
+        leader_key = ';', -- Recommended to be a single key
+        buffer_leader_key = 'm', -- Per Buffer Mappings
+        global_bookmarks = true
+      })
+    end
 }
 use {
     'CopilotC-Nvim/CopilotChat.nvim',
