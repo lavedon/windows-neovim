@@ -16,8 +16,10 @@ vim.api.nvim_create_autocmd("FileType", {
   command = [[nnoremap <buffer><silent> q :bdelete!<CR>]],
 })
 
+vim.api.nvim_create_autocmd("FileType", { pattern = "man", command = [[nnoremap <buffer><silent> q :quit<CR>]] })
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "cheat",
-  command = "nnoremap <buffer> q :q<CR>",
+  command = "nnoremap <buffer> q :bdelete!<CR>",
 })
 

@@ -2,7 +2,10 @@ local M = {}
 
 local lang = ""
 
+print("Loading cht.lua...")
+
 function M.cht()
+  print("Running cht function...")
   lang = ""
   vim.ui.input({ prompt = "cht.sh input: " }, function(input)
     local cmd = ""
@@ -34,11 +37,12 @@ function M.cht()
 end
 
 local function is_valid_syntax(syntax)
-    local success, _ = pcall(vim.api.nvim_buf_set_option, 0, 'syntax', syntax)
-    return success
+  local success, _ = pcall(vim.api.nvim_buf_set_option, 0, 'syntax', syntax)
+  return success
 end
 
-function M.cht_cmd(cmd)
+local function open_split()
+  print("Opening split...")
   vim.api.nvim_exec("vnew", true)
   vim.api.nvim_exec("terminal", true)
   local buf = vim.api.nvim_get_current_buf()
@@ -46,13 +50,46 @@ function M.cht_cmd(cmd)
   vim.api.nvim_buf_set_option(buf, "filetype", "cheat")
 
   if not lang:match("^:") and lang ~= "" and is_valid_syntax(lang) then
-      vim.api.nvim_buf_set_option(buf, "syntax", lang)
+    vim.api.nvim_buf_set_option(buf, "syntax", lang)
   end
+end
 
+function M.cht_cmd(cmd)
+  print("Running cht_cmd with cmd: " .. cmd)
+  open_split()
   local chan_id = vim.b.terminal_job_id
   local cht_cmd = "curl cht.sh/" .. cmd
   vim.api.nvim_chan_send(chan_id, cht_cmd .. "\r\n")
   vim.cmd [[stopinsert]]
 end
+
+function M.so_input()
+  print("Running so_input...")
+  local buf = vim.api.nvim_get_current_buf()
+  lang = ""
+  local file_type = vim.api.nvim_buf_get_option(buf, "filetype")
+  vim.ui.input({ prompt = "so input: ", default = file_type .. " " }, function(input)
+    local cmd = ""
+    if input == "" or not input then
+      return
+    elseif input == "h" then
+      cmd = "-h"
+    else
+      cmd = input
+    end
+    M.so_cmd(cmd)
+  end)
+end
+
+function M.so_cmd(cmd)
+  print("Running so_cmd with cmd: " .. cmd)
+  open_split()
+  local chan_id = vim.b.terminal_job_id
+  local so_cmd = "so " .. cmd
+  vim.api.nvim_chan_send(chan_id, so_cmd .. "\r\n")
+  vim.cmd [[stopinsert]]
+end
+
+print("Loaded cht.lua successfully")
 
 return M
