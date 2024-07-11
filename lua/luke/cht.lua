@@ -33,13 +33,21 @@ function M.cht()
   end)
 end
 
+local function is_valid_syntax(syntax)
+    local success, _ = pcall(vim.api.nvim_buf_set_option, 0, 'syntax', syntax)
+    return success
+end
+
 function M.cht_cmd(cmd)
   vim.api.nvim_exec("vnew", true)
   vim.api.nvim_exec("terminal", true)
   local buf = vim.api.nvim_get_current_buf()
   vim.api.nvim_buf_set_name(buf, "cheatsheet-" .. buf)
   vim.api.nvim_buf_set_option(buf, "filetype", "cheat")
-  vim.api.nvim_buf_set_option(buf, "syntax", lang)
+
+  if not lang:match("^:") and lang ~= "" and is_valid_syntax(lang) then
+      vim.api.nvim_buf_set_option(buf, "syntax", lang)
+  end
 
   local chan_id = vim.b.terminal_job_id
   local cht_cmd = "curl cht.sh/" .. cmd
