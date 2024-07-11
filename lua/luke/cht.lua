@@ -2,10 +2,7 @@ local M = {}
 
 local lang = ""
 
-print("Loading cht.lua...")
-
 function M.cht()
-  print("Running cht function...")
   lang = ""
   vim.ui.input({ prompt = "cht.sh input: " }, function(input)
     local cmd = ""
@@ -42,7 +39,6 @@ local function is_valid_syntax(syntax)
 end
 
 local function open_split()
-  print("Opening split...")
   vim.api.nvim_exec("vnew", true)
   vim.api.nvim_exec("terminal", true)
   local buf = vim.api.nvim_get_current_buf()
@@ -55,7 +51,6 @@ local function open_split()
 end
 
 function M.cht_cmd(cmd)
-  print("Running cht_cmd with cmd: " .. cmd)
   open_split()
   local chan_id = vim.b.terminal_job_id
   local cht_cmd = "curl cht.sh/" .. cmd
@@ -64,7 +59,6 @@ function M.cht_cmd(cmd)
 end
 
 function M.so_input()
-  print("Running so_input...")
   local buf = vim.api.nvim_get_current_buf()
   lang = ""
   local file_type = vim.api.nvim_buf_get_option(buf, "filetype")
@@ -82,14 +76,11 @@ function M.so_input()
 end
 
 function M.so_cmd(cmd)
-  print("Running so_cmd with cmd: " .. cmd)
   open_split()
   local chan_id = vim.b.terminal_job_id
   local so_cmd = "so " .. cmd
   vim.api.nvim_chan_send(chan_id, so_cmd .. "\r\n")
   vim.cmd [[stopinsert]]
 end
-
-print("Loaded cht.lua successfully")
 
 return M

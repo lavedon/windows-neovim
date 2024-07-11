@@ -76,6 +76,6 @@ vim.cmd [[highlight WinSeparator guibg=None]]
 vim.opt.shada = "!,'999,f1,<50,s10,h"
 
 -- cheat.sh 
-
 vim.api.nvim_set_keymap('n', '<leader>cc', "<cmd>lua require('luke.cht').cht()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>so', "<cmd>lua require('luke.cht').so_input()<CR>", { noremap = true, silent = true })
 vim.opt.scrollback = 100000
