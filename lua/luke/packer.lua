@@ -50,7 +50,7 @@ use {
       require('arrow').setup({
         show_icons = true,
         always_show_path = false,
-        leader_key = ';', -- Recommended to be a single key
+        leader_key = '<leader>;', -- Recommended to be a single key
         buffer_leader_key = 'm', -- Per Buffer Mappings
         global_bookmarks = true
       })
@@ -65,7 +65,7 @@ use {
     },
     config = function()
       require("CopilotChat").setup({
-        debug = true, -- Enable debugging
+        debug = false, -- Enable debugging
         -- Include other configuration settings here
       })
     end

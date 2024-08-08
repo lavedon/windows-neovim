@@ -85,6 +85,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\Luke.Avedon\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["arrow.nvim"] = {
+    config = { "\27LJ\2\n‹\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\5\21global_bookmarks\2\22buffer_leader_key\6m\15leader_key\6;\21always_show_path\1\15show_icons\2\nsetup\narrow\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\Luke.Avedon\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\arrow.nvim",
+    url = "https://github.com/otavioschwanck/arrow.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "C:\\Users\\Luke.Avedon\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
@@ -114,11 +120,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Luke.Avedon\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
-  },
-  harpoon = {
-    loaded = true,
-    path = "C:\\Users\\Luke.Avedon\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\harpoon",
-    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -207,6 +208,10 @@ time([[Config for CopilotChat.nvim]], false)
 time([[Config for obsidian.nvim]], true)
 try_loadstring("\27LJ\2\nž\1\0\0\5\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\2B\0\2\1K\0\1\0\15workspaces\1\0\1\15workspaces\0\1\0\2\tpath,C:\\Users\\Luke.Avedon\\ConiferCodingNotes\tname\twork\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
 time([[Config for obsidian.nvim]], false)
+-- Config for: arrow.nvim
+time([[Config for arrow.nvim]], true)
+try_loadstring("\27LJ\2\n‹\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\5\21global_bookmarks\2\22buffer_leader_key\6m\15leader_key\6;\21always_show_path\1\15show_icons\2\nsetup\narrow\frequire\0", "config", "arrow.nvim")
+time([[Config for arrow.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
