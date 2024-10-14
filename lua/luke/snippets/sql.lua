@@ -6,7 +6,7 @@ local i = ls.insert_node
 
 print("Loading SQL snippets...")
 
-return {
+ls.add_snippets("sql", {
     s("setup", {
         t({"SET ANSI_NULLS ON", "GO", "SET QUOTED_IDENTIFIER ON", "GO", ""}),
     }),
@@ -40,6 +40,6 @@ return {
         Column1     = i(4, "Column1"),
         Column2     = i(5, "Column2")
     }))
-}
+})
 
 print("SQL snippets loaded successfully")

@@ -35,3 +35,4 @@ ls.add_snippets("cs", { -- Make sure this matches your file type
         i(2, "objs"),
     }))
 })
+print("C# snippets loaded...")

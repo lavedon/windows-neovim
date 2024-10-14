@@ -12,7 +12,7 @@ ls.config.set_config({
     },
     },
 })
-require("luasnip.loaders.from_lua").load({paths = "C:/Users/User/AppData/Local/nvim/lua/luke/snippets"})
+require("luasnip.loaders.from_lua").load({paths = "C:/Users/Luke.Avedon/AppData/Local/nvim/lua/luke/snippets"})
 require'luasnip/loaders/from_vscode'.load() -- If you want to use friendly-snippets
 
 local function has_words_before()

@@ -3,9 +3,8 @@ local s = ls.s
 local t = ls.t
 local i = ls.i 
 
-ls.add_snippets("typescript", {
-
-    print("Loading typescript snippets.");
+print("Loading typescript snippets.")
+ls.add_snippets("ts", {
 	s("ternary", {
 		-- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
 		i(1, "cond"), t(" ? "), i(2, "then"), t(" : "), i(3, "else")
@@ -15,6 +14,6 @@ ls.add_snippets("typescript", {
       t("console.assert("), rep(1), t(" !== undefined, '"), rep(1), t(" is undefined.');\n"),
       t("console.assert("), rep(1), t(" !== null, '"), rep(1), t(" is null.');"),
     })
-    print("Typescript snippets loaded.");
 })
+print("Typescript snippets loaded.");
 

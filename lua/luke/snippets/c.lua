@@ -74,3 +74,4 @@ ls.add_snippets("c", {
     '}',
     }))
 })
+print("C snippets loaded...")
