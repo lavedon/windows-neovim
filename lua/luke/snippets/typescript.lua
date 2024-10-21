@@ -8,6 +8,7 @@ ls.add_snippets("typescript", {
     s("atleastOne", fmt([[
     const atLeastOneMatch = {}.some(obj1 =>
         {}.some(obj2 => obj1.{} === obj2.{}));
+    console.assert(atLeastOneMatch === true, 'there was not atLeastOneMatch');
     console.warn('any matches between {} and {}');
     console.warn(atLeastOneMatch);
     ]], {
@@ -17,7 +18,7 @@ ls.add_snippets("typescript", {
         i(4, "col2.obj.matchProperty"),
         rep(1),
         rep(2)
-    }),
+    })),
 	s("ternary", {
 		-- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
 		i(1, "cond"), t(" ? "), i(2, "then"), t(" : "), i(3, "else")
@@ -77,6 +78,6 @@ ls.add_snippets("typescript", {
         rep(1),
         rep(1)
     }))
-})
+});
 print("Typescript snippets loaded.");
 
